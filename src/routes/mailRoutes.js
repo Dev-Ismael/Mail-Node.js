@@ -1,11 +1,16 @@
-const express = require("express");
-const router = express.Router();
-const { sendMail } = require("../controllers/mailController");
+// mailRoutes.js
+import express from "express";
+import { sendMail } from "../controllers/mailController";
 
-router.post("/send", (req, res) => {
-    // Call the controller method
-    sendMail("a.ismael@bluskyint.com", "Test Subject", "<p>Test Mail Content</p>");
+const router = express.Router();
+
+router.get("/send", (req, res) => {
+    sendMail(
+        "a.ismael@bluskyint.com",      
+        "Test Subject",
+        "<p>Test Mail Content</p>"
+    );
     res.send("Email sent!");
 });
 
-module.exports = router;
+export default router;

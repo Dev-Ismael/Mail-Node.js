@@ -1,7 +1,7 @@
-const nodemailer = require("nodemailer");
-const emailConfig = require("../emailConfig");
+import nodemailer from "nodemailer";
+import {emailConfig} from "../emailConfig";
 
-const transporter = nodemailer.createTransport(emailConfig.sendgrid);
+const transporter = nodemailer.createTransport(emailConfig.gmail);
 
 const sendMail = (email, subject, html) => {
     const mailOptions = {
@@ -20,6 +20,4 @@ const sendMail = (email, subject, html) => {
     });
 };
 
-module.exports = {
-    sendMail,
-};
+export {sendMail}

@@ -1,8 +1,8 @@
-const express = require("express");
+import express from "express"
 const app = express();
 
 // Import routes
-const mailRoutes = require("./routes/mailRoutes");
+import mailRoutes from "./routes/mailRoutes";
 
 /*==============================================
 ======= Use Routes
